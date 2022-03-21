@@ -94,6 +94,36 @@ public class Student {
     	}
         return (Grade) grade;
     }
+    
+    @Override
+    public boolean equals(Object obj)
+    {
+ 
+        if (this == obj)
+            return true;
+ 
+        if (obj == null
+            || this.getClass() != obj.getClass())
+            return false;
+ 
+        Student studentObj = (Student)obj; 
+        
+        if(this.finalScore!=null) {
+        return this.firstname.equals(studentObj.firstname)
+            && this.lastname.equals(studentObj.lastname)
+            && this.university.equals(studentObj.university)
+            && this.test1Score.equals(studentObj.test1Score)
+            && this.test2Score.equals(studentObj.test2Score)
+            && this.test3Score.equals(studentObj.test3Score)
+            && this.test4Score.equals(studentObj.test4Score);
+        }
+        else 
+        {
+        	return this.firstname.equals(studentObj.firstname)
+                    && this.lastname.equals(studentObj.lastname)
+                    && this.university.equals(studentObj.university);
+        }
+    }
 
 }
 
